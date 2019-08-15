@@ -7,8 +7,22 @@
 	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 	<script src="/js/jquery-3.4.1.min.js"></script>
 	<script src="/js/script.js?ver=<?echo microtime(1);?>"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#79cfde">
+	<link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
 </head>
+<script>
+	window.addEventListener("load", () => {
+		const loader = document.getElementById('loader');
+		setTimeout(() => {
+			loader.classList.add('fadeOut');
+		}, 500);
+	});
+</script>
 <body>
+<div id="loader">
+		<div class="spinner"></div>
+	</div>
 	<div class="main">
 		<div class="background-darkening"></div>
 		<div class="name-user">
@@ -64,7 +78,7 @@
 				</div>
 				<div class="game-q-input">
 					<div class="input-block">
-						<input type="text" id="user_int" placeholder="Введите число" autofocus>
+						<input type="number" id="user_int" placeholder="Введите число" pattern="[0-9]{4}" autofocus>
 					</div>
 					<div class="input-enter">
 						<input type="button" > 
